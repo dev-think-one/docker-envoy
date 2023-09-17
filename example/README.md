@@ -2,5 +2,5 @@
 
 ```bash
 cp .env.example .env 
-docker-compose run --rm --build envoy run deploy
+docker-compose run --rm envoy run deploy
 ```
