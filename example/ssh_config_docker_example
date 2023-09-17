@@ -1,0 +1,12 @@
+Host site.demo
+    HostName 111.111.111.111
+    User demo_user
+
+# Notice that we disabled StrictHostKeyChecking to automatically add remotehost to the image’s known_hosts.
+# In our scenario we can trust the remotehost identity. Your mileage may vary, and you may need
+# to add the remotehost fingerprint by hand.
+Host *
+    StrictHostKeyChecking no
+    IdentitiesOnly yes
+    AddKeysToAgent yes
+

@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+
+  # docker-compose run --rm envoy run deploy
+  envoy:
+    image: devthinkstudio/envoy
+    volumes:
+      - ./:/var/www/html
+      - ${USER_SSH_CONFIG}:/home/user/.ssh/config
+    secrets:
+      - user_ssh_key
+
+secrets:
+  user_ssh_key:
+    file: ${USER_SSH_KEY}
