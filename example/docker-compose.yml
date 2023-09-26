@@ -7,10 +7,10 @@ services:
     image: devthinkstudio/envoy
     volumes:
       - ./:/var/www/html
-      - ${USER_SSH_CONFIG}:/home/user/.ssh/config
+      - ${USER_SSH_CONFIG:-/dev/null}:/home/user/.ssh/config
     secrets:
       - user_ssh_key
 
 secrets:
   user_ssh_key:
-    file: ${USER_SSH_KEY}
+    file: ${USER_SSH_KEY:-/dev/null}
