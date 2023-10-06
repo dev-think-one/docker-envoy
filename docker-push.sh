@@ -1,4 +1,3 @@
 #!/bin/bash
 
-docker build -t devthinkstudio/envoy .
-docker push devthinkstudio/envoy
+docker buildx build --platform linux/amd64,linux/arm64 -t devthinkstudio/envoy --push .
